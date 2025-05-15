@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamental Particles</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="https://cdncloudcart.com/40816/files/image/bullet.png?1699272775" alt="Maarif Schools" class="logo">
+            <h1>Fundamental Particles</h1>
+        </div>
+        <div class="language-selector">
+            <button class="lang-btn" data-lang="en"><img src="images/en.svg" alt="English"></button>
+            <button class="lang-btn" data-lang="bs"><img src="images/bs.svg" alt="Bosnian"></button>
+            <button class="lang-btn" data-lang="tr"><img src="images/tr.svg" alt="Turkish"></button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home View -->
+        <div class="content-container" id="home-view">
+            <div class="explore-box" id="atom-box">
+                <h2>EXPLORE ATOM</h2>
+                <div class="atom-model">
+                    <div class="electron"></div>
+                    <div class="orbit"></div>
+                    <div class="nucleus"></div>
+                </div>
+            </div>
+
+            <div class="explore-box" id="quarks-box">
+                <h2>EXPLORE QUARKS</h2>
+                <div class="quark-model">
+                    <div class="quark up">u</div>
+                    <div class="quark down">d</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Atom Detail View -->
+        <div class="detail-view" id="atom-view">
+            <button class="back-btn">← Back</button>
+            <h2>EXPLORE ATOM</h2>
+            <div class="atom-detail-model">
+                <div class="electron detail-particle" data-particle="electron"></div>
+                <div class="orbit detail-orbit"></div>
+                <div class="nucleus detail-particle" data-particle="nucleus">
+                    <div class="nucleon proton" data-nucleon="proton">p+</div>
+                    <div class="nucleon neutron" data-nucleon="neutron">n</div>
+                </div>
+            </div>
+            <p class="instruction-text">Click on a particle to learn more about it</p>
+            
+            <!-- Particle Info Sections -->
+            <div class="particle-info" id="electron-info">
+                <h3>ELECTRON</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="particle-symbol">e<sup>-</sup></div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Mass:</strong> 0.511 MeV/c²</p>
+                        <p><strong>Charge:</strong> -1 e</p>
+                        <ol>
+                            <li>Electrons are fundamental particles that orbit around the nucleus of an atom.</li>
+                            <li>They have a negative electric charge and are much lighter than protons or neutrons.</li>
+                            <li>Electrons are responsible for chemical bonding between atoms.</li>
+                            <li>They were discovered by J.J. Thomson in 1897.</li>
+                            <li>Electrons can behave as both particles and waves, demonstrating quantum properties.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="particle-info" id="nucleus-info">
+                <h3>NUCLEUS</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="particle-symbol">p<sup>+</sup> n</div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Components:</strong> Protons and Neutrons</p>
+                        <p><strong>Charge:</strong> Positive (from protons)</p>
+                        <ol>
+                            <li>The nucleus is the dense central region of an atom.</li>
+                            <li>It contains protons (positively charged) and neutrons (neutral).</li>
+                            <li>The nucleus makes up less than 0.01% of an atom's volume but contains over 99.9% of its mass.</li>
+                            <li>It was discovered by Ernest Rutherford in 1911.</li>
+                            <li>The strong nuclear force holds the nucleus together, overcoming the electromagnetic repulsion between protons.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proton Info Section -->
+            <div class="particle-info" id="proton-info">
+                <h3>PROTON</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="particle-symbol">p<sup>+</sup></div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Mass:</strong> 938.27 MeV/c²</p>
+                        <p><strong>Charge:</strong> +1 e</p>
+                        <p><strong>Composition:</strong> 2 up quarks, 1 down quark</p>
+                        <ol>
+                            <li>A proton is the positively charged particle that, together with the electrically neutral particles called neutrons, make up the nucleus of an atom.</li>
+                            <li>It has a positive electric charge equal in magnitude to that of an electron.</li>
+                            <li>Its mass is slightly less than the mass of a neutron and 1,836 times the mass of an electron.</li>
+                            <li>Protons and neutrons, each with masses of approximately one atomic mass unit, are jointly referred to as "nucleons" (particles present in atomic nuclei).</li>
+                            <li>One or more protons are present in the nucleus of every atom. They provide the attractive electrostatic central force which binds the atomic electrons.</li>
+                        </ol>
+                        <div class="quark-structure-container">
+                            <h4>Internal Quark Structure:</h4>
+                            <div class="quark-structure proton-structure">
+                                <div class="quark-internal up" data-quark="up">u</div>
+                                <div class="quark-internal up" data-quark="up">u</div>
+                                <div class="quark-internal down" data-quark="down">d</div>
+                            </div>
+                            <p class="quark-instruction">Click on a quark to learn more about it</p>
+                            <a href="#" class="fundamental-link" data-target="quarks-view">View Fundamental Particles Library</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Neutron Info Section -->
+            <div class="particle-info" id="neutron-info">
+                <h3>NEUTRON</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="particle-symbol">n</div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Mass:</strong> 939.57 MeV/c²</p>
+                        <p><strong>Charge:</strong> 0 e</p>
+                        <p><strong>Composition:</strong> 1 up quark, 2 down quarks</p>
+                        <ol>
+                            <li>A neutron is a subatomic particle with no electric charge, found in the nucleus of every atom except hydrogen-1.</li>
+                            <li>Neutrons and protons make up the nucleus of an atom, and are collectively called nucleons.</li>
+                            <li>The neutron has a mass slightly greater than that of a proton and about 1,839 times the mass of an electron.</li>
+                            <li>Outside the nucleus, free neutrons are unstable and have a mean lifetime of about 15 minutes, decaying into a proton, an electron, and an antineutrino.</li>
+                            <li>Neutrons play an important role in nuclear fission and fusion reactions.</li>
+                        </ol>
+                        <div class="quark-structure-container">
+                            <h4>Internal Quark Structure:</h4>
+                            <div class="quark-structure neutron-structure">
+                                <div class="quark-internal up" data-quark="up">u</div>
+                                <div class="quark-internal down" data-quark="down">d</div>
+                                <div class="quark-internal down" data-quark="down">d</div>
+                            </div>
+                            <p class="quark-instruction">Click on a quark to learn more about it</p>
+                            <a href="#" class="fundamental-link" data-target="quarks-view">View Fundamental Particles Library</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Internal Quark Info Sections (Initially Hidden) -->
+            <div class="quark-info internal-quark-info" id="internal-up-info">
+                <h3>UP QUARK</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="quark-symbol up">u</div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Mass:</strong> 2.2 MeV/c²</p>
+                        <p><strong>Charge:</strong> +⅔ e</p>
+                        <ol>
+                            <li>The up quark is the lightest of all quarks.</li>
+                            <li>It has a fractional electric charge of +⅔.</li>
+                            <li>Up quarks are found in protons (2 up quarks, 1 down quark) and neutrons (1 up quark, 2 down quarks).</li>
+                            <li>It is a first-generation quark, meaning it's one of the building blocks of ordinary matter.</li>
+                            <li>Up quarks are never found in isolation due to a phenomenon called color confinement.</li>
+                        </ol>
+                        <a href="#" class="fundamental-link" data-target="quarks-view">View Full Quark Library</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quark-info internal-quark-info" id="internal-down-info">
+                <h3>DOWN QUARK</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="quark-symbol down">d</div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Mass:</strong> 4.7 MeV/c²</p>
+                        <p><strong>Charge:</strong> -⅓ e</p>
+                        <ol>
+                            <li>The down quark is the second lightest quark.</li>
+                            <li>It has a fractional electric charge of -⅓.</li>
+                            <li>Down quarks are found in protons (1 down quark, 2 up quarks) and neutrons (2 down quarks, 1 up quark).</li>
+                            <li>It is a first-generation quark, part of the fundamental building blocks of ordinary matter.</li>
+                            <li>Like all quarks, down quarks cannot exist in isolation due to color confinement.</li>
+                        </ol>
+                        <a href="#" class="fundamental-link" data-target="quarks-view">View Full Quark Library</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Quarks Detail View (Library) - Redesigned -->
+        <div class="detail-view" id="quarks-view">
+            <button class="back-btn library-back-btn">
+                <img src="images/return_button.png" alt="Return">
+            </button>
+            <div class="library-header">
+                <h2 class="library-title">FUNDAMENTAL PARTICLES</h2>
+                <p class="library-description-top">A quark is a type of elementary particle and a fundamental constituent of matter. Quarks combine to form composite particles called hadrons, the most stable of which are protons and neutrons, the components of atomic nuclei. All commonly observable matter is composed of up quarks, down quarks and electrons. Due to a phenomenon known as colour confinement, quarks are never found in isolation; they can be found only within hadrons, which include baryons (such as protons and neutrons) and mesons, or in quark–gluon plasmas.</p>
+            </div>
+            
+            <!-- Enhanced Particle Library Layout with Direct Elements -->
+            <div class="particle-library-container">
+                <!-- Quarks Section -->
+                <div class="particle-category">
+                    <h3 class="category-title">QUARKS</h3>
+                    <div class="particle-grid">
+                        <div class="particle-item" data-particle-type="quark" data-particle-id="up">
+                            <div class="particle-circle quark up">u</div>
+                            <div class="particle-name">Up</div>
+                        </div>
+                        <div class="particle-item" data-particle-type="quark" data-particle-id="down">
+                            <div class="particle-circle quark down">d</div>
+                            <div class="particle-name">Down</div>
+                        </div>
+                        <div class="particle-item" data-particle-type="quark" data-particle-id="charm">
+                            <div class="particle-circle quark charm">c</div>
+                            <div class="particle-name">Charm</div>
+                        </div>
+                        <div class="particle-item" data-particle-type="quark" data-particle-id="strange">
+                            <div class="particle-circle quark strange">s</div>
+                            <div class="particle-name">Strange</div>
+                        </div>
+                        <div class="particle-item" data-particle-type="quark" data-particle-id="top">
+                            <div class="particle-circle quark top">t</div>
+                            <div class="particle-name">Top</div>
+                        </div>
+                        <div class="particle-item" data-particle-type="quark" data-particle-id="bottom">
+                            <div class="particle-circle quark bottom">b</div>
+                            <div class="particle-name">Bottom</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Leptons Section -->
+                <div class="particle-category">
+                    <h3 class="category-title">LEPTONS</h3>
+                    <div class="particle-grid">
+                        <div class="particle-item" data-particle-type="lepton" data-particle-id="electron">
+                            <div class="particle-circle lepton electron-lepton">e<sup>-</sup></div>
+                            <div class="particle-name">Electron</div>
+                        </div>
+                        <div class="particle-item" data-particle-type="lepton" data-particle-id="muon">
+                            <div class="particle-circle lepton muon-lepton">μ<sup>-</sup></div>
+                            <div class="particle-name">Muon</div>
+                        </div>
+                        <div class="particle-item" data-particle-type="lepton" data-particle-id="tau">
+                            <div class="particle-circle lepton tau-lepton">τ<sup>-</sup></div>
+                            <div class="particle-name">Tau</div>
+                        </div>
+                        <div class="particle-item" data-particle-type="lepton" data-particle-id="electron-neutrino">
+                            <div class="particle-circle lepton electron-neutrino-lepton">ν<sub>e</sub></div>
+                            <div class="particle-name">Electron Neutrino</div>
+                        </div>
+                        <div class="particle-item" data-particle-type="lepton" data-particle-id="muon-neutrino">
+                            <div class="particle-circle lepton muon-neutrino-lepton">ν<sub>μ</sub></div>
+                                <div class="particle-name">Muon Neutrino</div>
+                        </div>
+                        <div class="particle-item" data-particle-type="lepton" data-particle-id="tau-neutrino">
+                            <div class="particle-circle lepton tau-neutrino-lepton">ν<sub>τ</sub></div>
+                            <div class="particle-name">Tau Neutrino</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bosons Section -->
+                <div class="particle-category">
+                    <h3 class="category-title">BOSONS</h3>
+                    <div class="particle-grid">
+                        <div class="particle-item" data-particle-type="boson" data-particle-id="photon">
+                            <div class="particle-circle boson photon-boson">γ</div>
+                            <div class="particle-name">Photon</div>
+                        </div>
+                        <div class="particle-item" data-particle-type="boson" data-particle-id="gluon">
+                           <div class="particle-circle boson gluon-boson">g</div>
+                            <div class="particle-name">Gluon</div>
+                        </div>
+                        <div class="particle-item" data-particle-type="boson" data-particle-id="w-boson">
+                            <div class="particle-circle boson w-boson">W</div>
+                            <div class="particle-name">W Boson</div>
+                        </div>
+                        <div class="particle-item" data-particle-type="boson" data-particle-id="z-boson">
+                            <div class="particle-circle boson z-boson">Z</div>
+                            <div class="particle-name">Z Boson</div>
+                        </div>
+                        <div class="particle-item" data-particle-type="boson" data-particle-id="higgs-boson">
+                            <div class="particle-circle boson higgs-boson">H</div>
+                            <div class="particle-name">Higgs Boson</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="library-description-bottom">All quarks, are elementary fermions with spin 1/2, and experience all four fundamental interactions: gravitation, electromagnetism, weak interactions, and strong interactions.</p>
+            
+            <!-- Quark Info Sections (Main Library - Hidden Initially) -->
+            <div class="quark-info library-item-info" id="up-info">
+                <h3>UP QUARK</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="quark-symbol up">u</div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Mass:</strong> 2.2 MeV/c²</p>
+                        <p><strong>Charge:</strong> +⅔ e</p>
+                        <ol>
+                            <li>The up quark is the lightest of all quarks.</li>
+                            <li>It has a fractional electric charge of +⅔.</li>
+                            <li>Up quarks are found in protons (2 up quarks, 1 down quark) and neutrons (1 up quark, 2 down quarks).</li>
+                            <li>It is a first-generation quark, meaning it's one of the building blocks of ordinary matter.</li>
+                            <li>Up quarks are never found in isolation due to a phenomenon called color confinement.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quark-info library-item-info" id="down-info">
+                <h3>DOWN QUARK</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="quark-symbol down">d</div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Mass:</strong> 4.7 MeV/c²</p>
+                        <p><strong>Charge:</strong> -⅓ e</p>
+                        <ol>
+                            <li>The down quark is the second lightest quark.</li>
+                            <li>It has a fractional electric charge of -⅓.</li>
+                            <li>Down quarks are found in protons (1 down quark, 2 up quarks) and neutrons (2 down quarks, 1 up quark).</li>
+                            <li>It is a first-generation quark, part of the fundamental building blocks of ordinary matter.</li>
+                            <li>Like all quarks, down quarks cannot exist in isolation due to color confinement.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quark-info library-item-info" id="charm-info">
+                <h3>CHARM QUARK</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="quark-symbol charm">c</div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Mass:</strong> 1.28 GeV/c²</p>
+                        <p><strong>Charge:</strong> +⅔ e</p>
+                        <ol>
+                            <li>The charm quark is a second-generation quark.</li>
+                            <li>It has a fractional electric charge of +⅔, the same as the up quark.</li>
+                            <li>The charm quark was predicted in 1970 and discovered in 1974.</li>
+                            <li>It is much heavier than the first-generation quarks (up and down).</li>
+                            <li>Charm quarks are found in particles like the J/ψ meson and D mesons.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quark-info library-item-info" id="strange-info">
+                <h3>STRANGE QUARK</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="quark-symbol strange">s</div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Mass:</strong> 95 MeV/c²</p>
+                        <p><strong>Charge:</strong> -⅓ e</p>
+                        <ol>
+                            <li>The strange quark is a second-generation quark.</li>
+                            <li>It has a fractional electric charge of -⅓, the same as the down quark.</li>
+                            <li>The strange quark was discovered in the 1950s through the observation of "strange" particles in cosmic rays.</li>
+                            <li>It is heavier than the up and down quarks but lighter than the charm quark.</li>
+                            <li>Strange quarks are found in particles like kaons and some hyperons.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quark-info library-item-info" id="top-info">
+                <h3>TOP QUARK</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="quark-symbol top">t</div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Mass:</strong> 173.1 GeV/c²</p>
+                        <p><strong>Charge:</strong> +⅔ e</p>
+                        <ol>
+                            <li>The top quark is a third-generation quark and the heaviest known elementary particle.</li>
+                            <li>It has a fractional electric charge of +⅔, the same as the up and charm quarks.</li>
+                            <li>The top quark was discovered in 1995 at Fermilab.</li>
+                            <li>Due to its extremely high mass, it decays before it can form hadrons, making it the only quark that can be studied in isolation.</li>
+                            <li>Its mass is close to that of a gold atom, despite being a fundamental particle.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quark-info library-item-info" id="bottom-info">
+                <h3>BOTTOM QUARK</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="quark-symbol bottom">b</div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Mass:</strong> 4.18 GeV/c²</p>
+                        <p><strong>Charge:</strong> -⅓ e</p>
+                        <ol>
+                            <li>The bottom quark is a third-generation quark.</li>
+                            <li>It has a fractional electric charge of -⅓, the same as the down and strange quarks.</li>
+                            <li>The bottom quark was discovered in 1977 at Fermilab.</li>
+                            <li>It is the second-heaviest quark, after the top quark.</li>
+                            <li>Bottom quarks are found in B mesons and bottomonium states.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lepton Info Sections (Hidden Initially) -->
+            <div class="quark-info library-item-info" id="electron-info">
+                <h3>ELECTRON</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="particle-symbol">e<sup>-</sup></div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Mass:</strong> 0.511 MeV/c²</p>
+                        <p><strong>Charge:</strong> -1 e</p>
+                        <ol>
+                            <li>The electron is a first-generation lepton.</li>
+                            <li>It has a negative electric charge and is the lightest charged particle.</li>
+                            <li>Electrons orbit the nucleus in atoms and are responsible for chemical bonding.</li>
+                            <li>They were discovered by J.J. Thomson in 1897.</li>
+                            <li>Electrons can behave as both particles and waves, demonstrating quantum properties.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lepton Info Sections (Added) -->
+            <div class="quark-info library-item-info" id="muon-info">
+                <h3>MUON</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="particle-symbol">μ<sup>-</sup></div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Mass:</strong> 105.7 MeV/c²</p>
+                        <p><strong>Charge:</strong> -1 e</p>
+                        <ol>
+                            <li>The muon is a second-generation lepton, similar to the electron but much heavier.</li>
+                            <li>It has a negative electric charge.</li>
+                            <li>Muons are unstable and decay quickly into an electron, a neutrino, and an antineutrino.</li>
+                            <li>They are produced in high-energy collisions, such as cosmic rays hitting the atmosphere.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="quark-info library-item-info" id="tau-info">
+                <h3>TAU</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="particle-symbol">τ<sup>-</sup></div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Mass:</strong> 1776.8 MeV/c²</p>
+                        <p><strong>Charge:</strong> -1 e</p>
+                        <ol>
+                            <li>The tau is a third-generation lepton, even heavier than the muon.</li>
+                            <li>It has a negative electric charge.</li>
+                            <li>Tau particles are very unstable and decay rapidly into other particles.</li>
+                            <li>They were discovered in the 1970s.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="quark-info library-item-info" id="electron-neutrino-info">
+                <h3>ELECTRON NEUTRINO</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="particle-symbol">ν<sub>e</sub></div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Mass:</strong> Very small (exact value unknown)</p>
+                        <p><strong>Charge:</strong> 0 e</p>
+                        <ol>
+                            <li>The electron neutrino is a first-generation lepton with no electric charge.</li>
+                            <li>It interacts very weakly with matter, making it hard to detect.</li>
+                            <li>Neutrinos are produced in nuclear reactions, like those in the sun.</li>
+                            <li>They have a tiny mass, but it is not zero.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="quark-info library-item-info" id="muon-neutrino-info">
+                <h3>MUON NEUTRINO</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="particle-symbol">ν<sub>μ</sub></div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Mass:</strong> Very small (exact value unknown)</p>
+                        <p><strong>Charge:</strong> 0 e</p>
+                        <ol>
+                            <li>The muon neutrino is a second-generation lepton associated with the muon.</li>
+                            <li>It has no electric charge and interacts weakly.</li>
+                            <li>Muon neutrinos are produced in processes involving muons.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="quark-info library-item-info" id="tau-neutrino-info">
+                <h3>TAU NEUTRINO</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="particle-symbol">ν<sub>τ</sub></div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Mass:</strong> Very small (exact value unknown)</p>
+                        <p><strong>Charge:</strong> 0 e</p>
+                        <ol>
+                            <li>The tau neutrino is a third-generation lepton associated with the tau particle.</li>
+                            <li>It has no electric charge and interacts weakly.</li>
+                            <li>Tau neutrinos are the most recently discovered type of neutrino.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boson Info Sections (Added) -->
+            <div class="quark-info library-item-info" id="photon-info">
+                <h3>PHOTON</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="particle-symbol">γ</div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Mass:</strong> 0</p>
+                        <p><strong>Charge:</strong> 0 e</p>
+                        <ol>
+                            <li>The photon is the force carrier for the electromagnetic force.</li>
+                            <li>It is a massless particle with no electric charge.</li>
+                            <li>Light is composed of photons.</li>
+                            <li>Photons travel at the speed of light in a vacuum.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="quark-info library-item-info" id="gluon-info">
+                <h3>GLUON</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="particle-symbol">g</div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Mass:</strong> 0</p>
+                        <p><strong>Charge:</strong> 0 e</p>
+                        <ol>
+                            <li>Gluons are the force carriers for the strong nuclear force.</li>
+                            <li>They bind quarks together within protons and neutrons.</li>
+                            <li>Gluons are massless and have no electric charge, but they carry "color charge".</li>
+                            <li>There are eight types of gluons.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="quark-info library-item-info" id="w-boson-info">
+                <h3>W BOSON</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="particle-symbol">W<sup>±</sup></div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Mass:</strong> 80.4 GeV/c²</p>
+                        <p><strong>Charge:</strong> ±1 e</p>
+                        <ol>
+                            <li>W bosons (W+ and W-) are force carriers for the weak nuclear force.</li>
+                            <li>They are responsible for certain types of radioactive decay.</li>
+                            <li>W bosons are very heavy and have either a positive or negative electric charge.</li>
+                            <li>They were discovered in 1983.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="quark-info library-item-info" id="z-boson-info">
+                <h3>Z BOSON</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="particle-symbol">Z<sup>0</sup></div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Mass:</strong> 91.2 GeV/c²</p>
+                        <p><strong>Charge:</strong> 0 e</p>
+                        <ol>
+                            <li>The Z boson is also a force carrier for the weak nuclear force.</li>
+                            <li>It is involved in processes like neutrino scattering.</li>
+                            <li>The Z boson is very heavy and has no electric charge.</li>
+                            <li>It was discovered along with the W bosons in 1983.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="quark-info library-item-info" id="higgs-boson-info">
+                <h3>HIGGS BOSON</h3>
+                <div class="info-content">
+                    <div class="info-header">
+                        <div class="particle-symbol">H<sup>0</sup></div>
+                    </div>
+                    <div class="info-details">
+                        <p><strong>Mass:</strong> 125.1 GeV/c²</p>
+                        <p><strong>Charge:</strong> 0 e</p>
+                        <ol>
+                            <li>The Higgs boson is associated with the Higgs field, which gives mass to other fundamental particles.</li>
+                            <li>It has no electric charge and is very heavy.</li>
+                            <li>The Higgs boson was discovered at the Large Hadron Collider (LHC) in 2012.</li>
+                            <li>Its discovery confirmed the final piece of the Standard Model of particle physics.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Fundamental Particles. All rights reserved.</p>
+        <a href="https://manus.space" target="_blank">Made with Manus</a>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

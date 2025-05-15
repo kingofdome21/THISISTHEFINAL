@@ -1,0 +1,1699 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #e8f5f0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+header {
+    background-color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+.language-selector {
+    display: flex;
+    gap: 10px;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.lang-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.lang-btn img {
+    width: 30px;
+    height: 20px;
+    border: 1px solid #ddd;
+}
+
+/* Main Content Styles */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.explore-box {
+    background-color: #f0f8f4;
+    border-radius: 10px;
+    padding: 20px;
+    width: 45%;
+    min-width: 300px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.explore-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #444;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+/* Detail View Styles */
+.detail-view {
+    display: none;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative; /* Needed for absolute positioning of library elements */
+}
+
+.back-btn {
+    background-color: #e0f0e8;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #c5e0d5;
+}
+
+.instruction-text {
+    text-align: center;
+    color: #666;
+    margin: 20px 0;
+    font-style: italic;
+}
+
+/* Atom Model Styles */
+.atom-model {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.nucleus {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.orbit {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 1px solid #3498db;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.electron {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #3498db;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 0;
+    animation: orbit 4s linear infinite;
+}
+
+@keyframes orbit {
+    0% {
+        transform: rotate(0deg) translateX(90px);
+    }
+    100% {
+        transform: rotate(360deg) translateX(90px);
+    }
+}
+
+/* Atom Detail Model Styles */
+.atom-detail-model {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.detail-orbit {
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    border: 3px solid #3498db;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+}
+
+.detail-particle {
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.detail-particle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.detail-particle[data-particle="electron"] {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #3498db;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 0;
+    animation: detailOrbit 6s linear infinite;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.8);
+    z-index: 3;
+}
+
+.detail-particle[data-particle="nucleus"] {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.nucleon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.nucleon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.proton {
+    background-color: #6b1a12; /* Darker red to match Construct 3 */
+    background-image: linear-gradient(45deg, #6b1a12, #8a2a22);
+    position: relative;
+    overflow: hidden;
+}
+
+.proton::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%);
+    pointer-events: none;
+}
+
+.neutron {
+    background-color: #5a5a5a; /* Gray to match Construct 3 */
+    background-image: linear-gradient(45deg, #5a5a5a, #6e6e6e);
+    position: relative;
+    overflow: hidden;
+}
+
+.neutron::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%);
+    pointer-events: none;
+}
+
+@keyframes detailOrbit {
+    0% {
+        transform: rotate(0deg) translateX(180px);
+    }
+    100% {
+        transform: rotate(360deg) translateX(180px);
+    }
+}
+
+/* Quark Model Styles (Home Page) */
+.quark-model {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.quark {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.up {
+    background-color: #2ecc71; /* Bright green to match Construct 3 */
+}
+
+.down {
+    background-color: #e056b8; /* Pink/purple to match Construct 3 */
+}
+
+/* Quark Structure Styles (Inside Proton/Neutron) */
+.quark-structure-container {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+}
+
+.quark-structure {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 15px auto;
+    border-radius: 50%;
+}
+
+.proton-structure {
+    background-color: #6b1a12; /* Darker red to match Construct 3 */
+    background-image: linear-gradient(45deg, #6b1a12, #8a2a22);
+    position: relative;
+    overflow: hidden;
+}
+
+.proton-structure::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%);
+    pointer-events: none;
+}
+
+.neutron-structure {
+    background-color: #5a5a5a; /* Gray to match Construct 3 */
+    background-image: linear-gradient(45deg, #5a5a5a, #6e6e6e);
+    position: relative;
+    overflow: hidden;
+}
+
+.neutron-structure::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%);
+    pointer-events: none;
+}
+
+.quark-internal {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: absolute;
+}
+
+.quark-internal:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.quark-internal.up {
+    background-color: #2ecc71; /* Bright green to match Construct 3 */
+}
+
+.quark-internal.down {
+    background-color: #e056b8; /* Pink/purple to match Construct 3 */
+}
+
+/* Position quarks inside proton/neutron */
+.proton-structure .quark-internal:nth-child(1) {
+    top: 30px;
+    left: 40px;
+}
+
+.proton-structure .quark-internal:nth-child(2) {
+    top: 30px;
+    right: 40px;
+}
+
+.proton-structure .quark-internal:nth-child(3) {
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.proton-structure .quark-internal:nth-child(3):hover {
+    transform: translateX(-50%) scale(1.1);
+}
+
+.neutron-structure .quark-internal:nth-child(1) {
+    top: 30px;
+    left: 40px;
+}
+
+.neutron-structure .quark-internal:nth-child(2) {
+    top: 30px;
+    right: 40px;
+}
+
+.neutron-structure .quark-internal:nth-child(3) {
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.neutron-structure .quark-internal:nth-child(3):hover {
+    transform: translateX(-50%) scale(1.1);
+}
+
+.quark-instruction {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+.fundamental-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    padding: 8px 15px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.fundamental-link:hover {
+    color: #3498db;
+    background-color: #e0e0e0;
+}
+/* Atom Builder Button Styles */
+.atom-builder-button-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#atom-builder-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+#atom-builder-button:hover {
+    background-color: #388E3C;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Modal Styles */
+.atom-builder-modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    overflow: auto;
+}
+
+.atom-builder-modal-content {
+    background-color: #f0f8f4;
+    margin: 10% auto;
+    padding: 30px;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    position: relative;
+    animation: modalFadeIn 0.4s;
+}
+
+@keyframes modalFadeIn {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.atom-builder-close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #666;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.atom-builder-close:hover {
+    color: #333;
+}
+
+.atom-builder-modal h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #444;
+    font-size: 24px;
+}
+
+/* Atom Builder Model Styles */
+.atom-builder-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.atom-builder-model {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.atom-builder-nucleus {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    transition: width 0.3s, height 0.3s;
+}
+
+.atom-builder-orbit {
+    position: absolute;
+    border: 2px solid #3498db;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.atom-builder-orbit-1 {
+    width: 180px;
+    height: 180px;
+}
+
+.atom-builder-orbit-2 {
+    width: 240px;
+    height: 240px;
+}
+
+.atom-builder-proton {
+    width: 20px;
+    height: 20px;
+    background-color: #6b1a12;
+    border-radius: 50%;
+    margin: 2px;
+    z-index: 3;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.atom-builder-neutron {
+    width: 20px;
+    height: 20px;
+    background-color: #5a5a5a;
+    border-radius: 50%;
+    margin: 2px;
+    z-index: 3;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.atom-builder-electron {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #3498db;
+    border-radius: 50%;
+    z-index: 3;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.8);
+    /* Positioning and animation will be handled by JavaScript */
+}
+
+/* Controls Styles */
+.atom-builder-controls {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.atom-builder-controls button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#add-proton-button {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#add-proton-button:hover {
+    background-color: #c0392b;
+}
+
+#add-neutron-button {
+    background-color: #5a5a5a;
+    color: white;
+}
+
+#add-neutron-button:hover {
+    background-color: #444;
+}
+
+#add-electron-button {
+    background-color: #3498db;
+    color: white;
+}
+
+#add-electron-button:hover {
+    background-color: #2980b9;
+}
+
+/* Info Panel Styles */
+.atom-builder-info {
+    background-color: #fff;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    min-width: 250px;
+}
+
+.atom-builder-info p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+#element-message {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e0f0e8;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .atom-builder-modal-content {
+        width: 90%;
+        margin: 15% auto;
+    }
+    
+    .atom-builder-model {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .atom-builder-orbit-1 {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .atom-builder-orbit-2 {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .atom-builder-controls {
+        flex-direction: column;
+    }
+}
+
+/* Particle and Quark Info Styles */
+.particle-info, .quark-info {
+    display: none;
+    background-color: #e0f0e8;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.particle-symbol, .quark-symbol {
+    font-size: 36px;
+    font-weight: bold;
+    padding: 15px 25px;
+    border-radius: 10px;
+    color: white;
+}
+
+.particle-symbol {
+    background-color: #3498db;
+}
+
+#nucleus-info .particle-symbol {
+    background-color: #e74c3c;
+}
+
+#proton-info .particle-symbol {
+    background-color: #6b1a12; /* Darker red to match Construct 3 */
+}
+
+#neutron-info .particle-symbol {
+    background-color: #5a5a5a; /* Gray to match Construct 3 */
+}
+
+.quark-symbol {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+#up-info .quark-symbol {
+    background-color: #2ecc71; /* Bright green to match Construct 3 */
+    color: black;
+}
+
+#down-info .quark-symbol {
+    background-color: #e056b8; /* Pink/purple to match Construct 3 */
+    color: black;
+}
+
+#strange-info .quark-symbol {
+    background-color: #9b59b6;
+}
+
+#charm-info .quark-symbol {
+    background-color: #2ecc71;
+    color: black;
+}
+
+#bottom-info .quark-symbol {
+    background-color: #f39c12;
+}
+
+
+#top-info .quark-symbol {
+    background-color: #1abc9c;
+}
+
+.info-details {
+    text-align: left;
+}
+
+.info-details p {
+    margin-bottom: 10px;
+}
+
+.info-details ol {
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.info-details li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.info-details h4 {
+    margin-bottom: 10px;
+    color: #444;
+}
+
+/* Quark Library Styles (#quarks-view) */
+#quarks-view {
+    /* background-image: url("images/library_background.png"); */ /* Removed background image */
+    background-color: #e8f5f0; /* Changed to match body background */
+    /* background-size: cover; */
+    /* background-position: center; */
+    padding: 20px;
+    border-radius: 10px;
+    color: #333; /* Changed text color for light background */
+    max-width: 800px; /* Adjust as needed */
+    margin: 20px auto;
+    border: 1px solid #c5e0d5; /* Added a light border */
+}
+
+.library-back-btn {
+    position: absolute;
+    top: 30px; /* Adjust positioning */
+    left: 30px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.library-back-btn img {
+    width: 100px; /* Adjust size */
+    height: auto;
+    transition: transform 0.2s;
+}
+
+.library-back-btn:hover img {
+    transform: scale(1.1);
+}
+
+.library-title {
+    text-align: right;
+    font-size: 28px;
+    margin-bottom: 20px;
+    margin-top: 10px; /* Space below button */
+    padding-right: 20px;
+    color: #333; /* Changed text color */
+}
+
+.library-description-top,
+.library-description-bottom {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 20px 0;
+    padding: 0 15px;
+    color: #555; /* Changed text color */
+}
+
+.library-layout-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px; /* Match image width */
+    margin: 30px auto;
+}
+
+.library-layout-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Style for the info boxes within the library */
+.library-item-info {
+    display: none; /* Hidden by default */
+    background-color: #f0f8f4; /* Light background for info boxes */
+    color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 1px solid #c5e0d5;
+}
+
+.library-item-info h3 {
+    color: #444;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.library-item-info .info-header {
+    margin-bottom: 20px;
+}
+
+.library-item-info .info-details {
+    font-size: 15px;
+}
+
+.library-item-info .info-details strong {
+    color: #555;
+}
+
+/* Hide the old quark model in the library view */
+#quarks-view .quarks-detail-model {
+    display: none;
+}
+
+#quarks-view .instruction-text {
+    display: none; /* Replaced by image map */
+}
+
+/* Footer Styles */
+footer {
+    background-color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.footer-right {
+    text-align: right;
+    font-size: 14px;
+    color: #666;
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .explore-box {
+        width: 90%;
+    }
+    
+    .atom-detail-model {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .detail-orbit {
+        width: 260px;
+        height: 260px;
+    }
+    
+    .detail-particle[data-particle="electron"] {
+        animation: detailOrbitMobile 6s linear infinite;
+    }
+    
+    @keyframes detailOrbitMobile {
+        from {
+            transform: rotate(0deg) translateX(130px) rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg) translateX(130px) rotate(-360deg);
+        }
+    }
+    
+    /* Library Responsive */
+    #quarks-view {
+        max-width: 95%;
+        padding: 15px;
+    }
+
+    .library-back-btn {
+        top: 15px;
+        left: 15px;
+    }
+
+    .library-back-btn img {
+        width: 80px;
+    }
+
+    .library-title {
+        font-size: 22px;
+        text-align: center;
+        margin-top: 60px; /* Space below button */
+        padding-right: 0;
+    }
+
+    .library-description-top,
+    .library-description-bottom {
+        font-size: 14px;
+    }
+
+    .library-layout-container {
+        max-width: 100%;
+    }
+    
+    footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .footer-right {
+        text-align: center;
+    }
+}
+
+
+
+
+/* New Library Design Styles */
+.particle-library-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.particle-category {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.category-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.particle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 25px;
+}
+
+.particle-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.particle-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.particle-circle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific Particle Colors (Retained & Enhanced) */
+.particle-circle.quark.up { background: linear-gradient(135deg, #4CAF50, #2E7D32); }
+.particle-circle.quark.down { background: linear-gradient(135deg, #F8BBD0, #EC407A); }
+.particle-circle.quark.charm { background: linear-gradient(135deg, #388E3C, #1B5E20); } /* New color */
+.particle-circle.quark.strange { background: linear-gradient(135deg, #CE93D8, #9C27B0); }
+.particle-circle.quark.top { background: linear-gradient(135deg, #2E7D32, #1B5E20); }
+.particle-circle.quark.bottom { background: linear-gradient(135deg, #AB47BC, #6A1B9A); }
+
+/*Leptons colors*/
+
+
+.particle-circle.lepton.electron-lepton { background: linear-gradient(135deg, #f7d86a, #f7b24a); }
+.particle-circle.lepton.electron-neutrino-lepton { background: linear-gradient(135deg, #4ccdd4, #3a7dd6); }
+.particle-circle.lepton.muon-lepton { background: linear-gradient(135deg, #f7b24a, #f78c2a); }
+.particle-circle.lepton.muon-neutrino-lepton { background: linear-gradient(135deg, #3a7dd6, #4ccdd4); }
+.particle-circle.lepton.tau-lepton { background: linear-gradient(135deg, #f78c2a, #f7b24a); }
+.particle-circle.lepton.tau-neutrino-lepton { background: linear-gradient(135deg, #1c295c, #3a7dd6); }
+
+/* Lepton sup and sub styling (keep common for all leptons) */
+.particle-circle.lepton sup, 
+.particle-circle.lepton sub {
+  font-size: 0.6em;
+  vertical-align: baseline;
+  position: relative;
+  top: -0.3em;
+}
+.particle-circle.lepton sub {
+  top: 0.3em;
+}
+
+/* Bosons individual colors */
+.particle-circle.boson.photon-boson { background: linear-gradient(135deg, #b5e8fa, #4ccdd4); }
+.particle-circle.boson.w-boson { background: linear-gradient(135deg, #b5b8fa, #b5e8fa); }
+.particle-circle.boson.z-boson { background: linear-gradient(135deg, #e9e563, #b5b8fa); }
+.particle-circle.boson.gluon-boson { background: linear-gradient(135deg, #46a49c, #b5e8fa); }
+.particle-circle.boson.higgs-boson { background: linear-gradient(135deg, #eaeaea, #b5b8fa); }
+
+
+/* Boson sup styling (keep common for all bosons) */
+.particle-circle.boson sup {
+  font-size: 0.6em;
+  vertical-align: baseline;
+  position: relative;
+  top: -0.3em;
+}
+
+.particle-name {
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Adjustments for library info panels */
+.library-item-info {
+    background-color: #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.library-item-info h3 {
+    color: #333;
+}
+
+.library-item-info .info-details strong {
+    color: #444;
+}
+
+/* Responsive adjustments for new design */
+@media (max-width: 768px) {
+    .particle-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 15px;
+    }
+    .particle-circle {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+    }
+    .particle-name {
+        font-size: 13px;
+    }
+    .particle-category {
+        padding: 20px;
+    }
+    .category-title {
+        font-size: 20px;
+    }
+}
+
+
+/* --- Color Fixes for Info Box Symbols (Leptons & Bosons) --- */
+
+/* Leptons - Match Library Circle Colors */
+#electron-info .particle-symbol {
+    background: linear-gradient(135deg, #f7d86a, #f7b24a);
+    color: black; /* Ensure text visibility */
+}
+#electron-neutrino-info .particle-symbol {
+    background: linear-gradient(135deg, #4ccdd4, #3a7dd6);
+}
+#muon-info .particle-symbol {
+    background: linear-gradient(135deg, #f7b24a, #f78c2a);
+    color: black; /* Ensure text visibility */
+}
+#muon-neutrino-info .particle-symbol {
+    background: linear-gradient(135deg, #3a7dd6, #4ccdd4);
+}
+#tau-info .particle-symbol {
+    background: linear-gradient(135deg, #f78c2a, #f7b24a);
+    color: black; /* Ensure text visibility */
+}
+#tau-neutrino-info .particle-symbol {
+    background: linear-gradient(135deg, #1c295c, #3a7dd6);
+}
+
+/* Bosons - Match Library Circle Colors */
+#photon-info .particle-symbol {
+    background: linear-gradient(135deg, #b5e8fa, #4ccdd4);
+    color: black; /* Ensure text visibility */
+}
+#w-boson-info .particle-symbol {
+    background: linear-gradient(135deg, #b5b8fa, #b5e8fa);
+    color: black; /* Ensure text visibility */
+}
+#z-boson-info .particle-symbol {
+    background: linear-gradient(135deg, #e9e563, #b5b8fa);
+    color: black; /* Ensure text visibility */
+}
+#gluon-info .particle-symbol {
+    background: linear-gradient(135deg, #46a49c, #b5e8fa);
+}
+#higgs-boson-info .particle-symbol {
+    background: linear-gradient(135deg, #eaeaea, #b5b8fa);
+    color: black; /* Ensure text visibility */
+}
+
+/* Ensure general particle symbol styling doesn't override */
+.particle-info .particle-symbol, .quark-info .particle-symbol {
+    font-size: 36px;
+    font-weight: bold;
+    padding: 15px 25px;
+    border-radius: 10px;
+    color: white; /* Default color, overridden by specific rules */
+    display: inline-block; /* Ensure padding works */
+    text-align: center;
+    min-width: 70px; /* Ensure consistent width */
+}
+
+/* Override for quark symbols in info boxes to match library */
+#up-info .quark-symbol, #internal-up-info .quark-symbol {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: white;
+}
+#down-info .quark-symbol, #internal-down-info .quark-symbol {
+    background: linear-gradient(135deg, #F8BBD0, #EC407A);
+    color: white;
+}
+#charm-info .quark-symbol {
+    background: linear-gradient(135deg, #388E3C, #1B5E20);
+    color: white;
+}
+#strange-info .quark-symbol {
+    background: linear-gradient(135deg, #CE93D8, #9C27B0);
+    color: white;
+}
+#top-info .quark-symbol {
+    background: linear-gradient(135deg, #2E7D32, #1B5E20);
+    color: white;
+}
+#bottom-info .quark-symbol {
+    background: linear-gradient(135deg, #AB47BC, #6A1B9A);
+    color: white;
+}
+
+/* Adjust quark symbol size in info boxes to match library better */
+.quark-info .quark-symbol {
+    width: 65px; 
+    height: 65px;
+    font-size: 26px;
+    padding: 0; /* Remove padding if using fixed size */
+    display: flex; /* Use flex to center content */
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Make it circular like library */
+}
+
+/* Adjust particle symbol size for leptons/bosons in info boxes */
+.particle-info .particle-symbol {
+    width: 65px; 
+    height: 65px;
+    font-size: 26px;
+    padding: 0; /* Remove padding if using fixed size */
+    display: flex; /* Use flex to center content */
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Make it circular like library */
+}
+
+/* Specific adjustments for symbols with sub/sup */
+.particle-info .particle-symbol sup, 
+.particle-info .particle-symbol sub {
+    font-size: 0.6em;
+    vertical-align: baseline;
+    position: relative;
+    top: -0.3em;
+}
+.particle-info .particle-symbol sub {
+    top: 0.3em;
+}
+
+
+
+
+
+/* Atom Builder Home Model Styles */
+.atom-builder-home-model {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.builder-nucleus {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #4CAF50; /* Green color for builder */
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.builder-orbit-inner {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 1px dashed #777;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.builder-orbit-outer {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 1px dashed #aaa;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+#remove-proton-button,
+#remove-neutron-button,
+#remove-electron-button {
+    background-color: #f1c40f; /* Yellow/Orange for remove */
+    color: #333;
+}
+
+#remove-proton-button:hover,
+#remove-neutron-button:hover,
+#remove-electron-button:hover {
+    background-color: #f39c12;
+}
+
+
+
+
+/* Atom Builder Electron Orbit Animation */
+@keyframes orbit-builder-1 {
+    0% {
+        transform: rotate(0deg) translateX(90px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(90px) rotate(-360deg);
+    }
+}
+
+@keyframes orbit-builder-2 {
+    0% {
+        transform: rotate(0deg) translateX(120px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(120px) rotate(-360deg);
+    }
+}
+
+.atom-builder-electron {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #3498db;
+    border-radius: 50%;
+    z-index: 3;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.8);
+    /* Remove static positioning */
+    /* left: calc(50% + ...); */
+    /* top: calc(50% + ...); */
+    /* Add animation */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    margin-top: -7.5px; /* Offset by half height */
+    margin-left: -7.5px; /* Offset by half width */
+    transform-origin: center center; /* Ensure rotation is around the center of the model */
+    /* Animation will be applied via JS */
+}
+
+
+
+/* Electron Container Styles (Container Approach) */
+.electron-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0; /* Container itself has no size */
+    height: 0;
+    transform-origin: 0 0; /* Rotate around the center (nucleus) */
+    z-index: 3;
+}
+
+/* Adjust electron position within the container */
+.electron-container .atom-builder-electron {
+    position: absolute;
+    top: -7.5px; /* Center the electron visually on the orbit path */
+    left: -7.5px;
+    /* transform: translateX(...) is set dynamically via JS */
+    /* Remove direct animation from electron */
+    animation: none;
+}
+
+/* Keyframes for Container Rotation */
+@keyframes orbit-container-1 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes orbit-container-2 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes orbit-container-3 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Ensure the third orbit is visible */
+.atom-builder-orbit-3 {
+    width: 300px; /* Match the max radius used in JS (90 + (3-1)*30 = 150 radius -> 300 diameter) */
+    height: 300px;
+}
+
+/* Remove old electron animation if it exists */
+/* @keyframes orbit-builder-1, @keyframes orbit-builder-2, @keyframes orbit-builder-3 { ... } */
+/* The JS now uses orbit-container-X, so old keyframes are unused */
+
+/* Add styles for the atom builder preview on the home page */
+.atom-builder-home-preview {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    margin-top: 15px;
+}
+
+
+
+/* Styles for Home Page Atom Builder Preview */
+.atom-builder-home-preview {
+    position: relative;
+    width: 150px; /* Match previous image size */
+    height: 150px;
+    margin: 15px auto 0;
+    border: 1px solid #ddd; /* Add a light border like the example */
+    background-color: #f9f9f9; /* Light background for the preview box */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview-nucleus {
+    position: absolute;
+    width: 30px; /* Smaller nucleus for preview */
+    height: 30px;
+    background-color: #2ecc71; /* Green nucleus like example */
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.preview-orbit {
+    position: absolute;
+    border: 1px dashed #aaa; /* Dashed orbits like example */
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.preview-orbit-1 {
+    width: 70px; /* Smaller orbits for preview */
+    height: 70px;
+}
+
+.preview-orbit-2 {
+    width: 110px;
+    height: 110px;
+}
+
+
+
+/* Updated Atom Builder Controls Styles */
+.atom-builder-controls {
+    display: flex;
+    flex-direction: column; /* Stack rows vertically */
+    align-items: center; /* Center rows */
+    gap: 10px; /* Space between rows */
+    margin: 20px 0;
+}
+
+.controls-row {
+    display: flex;
+    gap: 15px; /* Space between buttons in a row */
+    justify-content: center; /* Center buttons within the row */
+}
+
+.atom-builder-controls button {
+    padding: 10px 20px; /* Adjust padding */
+    border: 1px solid transparent; /* Start with transparent border */
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 150px; /* Ensure buttons have a decent width */
+    text-align: center;
+}
+
+/* Add Button Styles (Top Row) */
+.add-button {
+    color: white;
+    font-weight: bold;
+}
+
+.add-button.electron-button {
+    background-color: #3498db; /* Blue */
+    border-color: #2980b9;
+}
+.add-button.electron-button:hover {
+    background-color: #2980b9;
+}
+
+.add-button.proton-button {
+    background-color: #e74c3c; /* Red */
+    border-color: #c0392b;
+}
+.add-button.proton-button:hover {
+    background-color: #c0392b;
+}
+
+.add-button.neutron-button {
+    background-color: #5a5a5a; /* Gray */
+    border-color: #444;
+}
+.add-button.neutron-button:hover {
+    background-color: #444;
+}
+
+/* Remove Button Styles (Bottom Row) */
+.remove-button {
+    background-color: #ffffff; /* White */
+    color: #5a5a5a; /* Gray text */
+    border: 1px solid #ccc; /* Gray border */
+}
+
+.remove-button:hover {
+    background-color: #f0f0f0; /* Light gray on hover */
+    border-color: #aaa;
+}
+
+/* Remove old individual button styles if they conflict */
+/* #add-proton-button, #add-neutron-button, #add-electron-button { ... } */
+/* These are now handled by the .add-button and specific color classes */
+
+/* Responsive adjustments for buttons if needed */
+@media (max-width: 600px) {
+    .controls-row {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+        width: 100%;
+        align-items: center;
+    }
+    .atom-builder-controls button {
+        width: 80%; /* Make buttons wider on mobile */
+        max-width: 300px;
+    }
+}
+
+
+/* Add this rule to remove underline from the link */
+.explore-link {
+    text-decoration: none;
+}
+
+/* Styles for the home page Atom Builder preview */
+.atom-builder-home-preview {
+    position: relative;
+    width: 180px; /* Adjusted size to better match other previews */
+    height: 180px; /* Adjusted size */
+    margin: 20px auto 0; /* Add some margin */
+    background-color: transparent; /* Explicitly set to transparent */
+}
+
+.preview-nucleus {
+    position: absolute;
+    width: 50px; /* Adjusted size */
+    height: 50px; /* Adjusted size */
+    background-color: #e74c3c; /* Changed to red like other nucleus */
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.preview-orbit {
+    position: absolute;
+    border: 1px solid #3498db; /* Changed to solid blue like other orbits */
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.preview-orbit-1 {
+    width: 120px; /* Adjusted size */
+    height: 120px; /* Adjusted size */
+}
+
+.preview-orbit-2 {
+    width: 160px; /* Adjusted size */
+    height: 160px; /* Adjusted size */
+}
+
+
+
+/* Remove outline from Atom Builder box specifically */
+#atom-builder-box {
+    box-shadow: none;
+    border: none;
+}
+
+#atom-builder-box:hover {
+    transform: none; /* Also remove hover effect if desired */
+    box-shadow: none;
+}
+
