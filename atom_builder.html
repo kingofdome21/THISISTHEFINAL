@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atom Builder - Fundamental Particles</title>
+    <link rel="stylesheet" href="styles_dark_futuristic.css">
+</head>
+<body>
+    <header>
+        <!-- Re-use header from index.html for consistency -->
+        <div class="logo-container">
+            <img alt="Maarif Schools" class="logo" src="https://cdncloudcart.com/40816/files/image/bullet.png?1699272775"/>
+            <h1 data-translate-key="title">Fundamental Particles</h1>
+        </div>
+        <div class="language-selector">
+            <button class="lang-btn" data-lang="en"><img alt="English" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1200px-Flag_of_the_United_Kingdom_%281-2%29.svg.png"/></button>
+            <button class="lang-btn" data-lang="bs"><img alt="Bosnian" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Flag_of_Bosnia_and_Herzegovina.svg/800px-Flag_of_Bosnia_and_Herzegovina.svg.png"/></button>
+            <button class="lang-btn" data-lang="tr"><img alt="Turkish" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/960px-Flag_of_Turkey.svg.png"/></button>
+        </div>
+    </header>
+
+    <main>
+        <div class="detail-view" id="atom-builder-view" style="display: block;">
+            <button onclick="history.back()" class="back-btn" data-translate-key="back">← Back</button>
+            <h2 data-translate-key="atomBuilderTitle">Atom Builder</h2>
+            
+            <!-- Atom Builder Content Will Go Here -->
+            <div class="atom-builder-container">
+                <div class="atom-builder-model">
+                    <div class="atom-builder-orbit atom-builder-orbit-1"></div>
+                    <div class="atom-builder-orbit atom-builder-orbit-2"></div>
+                    <div class="atom-builder-orbit atom-builder-orbit-3"></div> <!-- Added third orbit -->
+                    <div class="atom-builder-nucleus"></div>
+                    <!-- Electrons, protons, and neutrons will be added dynamically -->
+                </div>
+                
+                <div class="atom-builder-controls">
+                    <div class="controls-row add-buttons">
+                        <button id="add-electron-button" class="add-button electron-button" data-translate-key="addElectron">Add Electron</button>
+                        <button id="add-proton-button" class="add-button proton-button" data-translate-key="addProton">Add Proton</button>
+                        <button id="add-neutron-button" class="add-button neutron-button" data-translate-key="addNeutron">Add Neutron</button>
+                    </div>
+                    <div class="controls-row remove-buttons">
+                        <button id="remove-electron-button" class="remove-button" data-translate-key="removeElectron">Remove Electron</button>
+                        <button id="remove-proton-button" class="remove-button" data-translate-key="removeProton">Remove Proton</button>
+                        <button id="remove-neutron-button" class="remove-button" data-translate-key="removeNeutron">Remove Neutron</button>
+                    </div>
+                </div>
+                
+                <div class="atom-builder-info">
+                    <p><span data-translate-key="protonsLabel">Protons:</span> <span id="proton-count">0</span></p>
+                    <p><span data-translate-key="neutronsLabel">Neutrons:</span> <span id="neutron-count">0</span></p>
+                    <p><span data-translate-key="electronsLabel">Electrons:</span> <span id="electron-count">0</span></p>
+                    <div id="element-message"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Re-use footer from index.html -->
+        <p data-translate-key="copyright">© 2025 Fundamental Particles. All rights reserved.</p>
+        <p data-translate-key="madeWith">Made with Manus</p>
+    </footer>
+
+    <!-- Link to a new JS file for Atom Builder specific logic -->
+    <script src="atom_builder.js"></script>
+</body>
+</html>
